@@ -1,0 +1,6 @@
+{
+  "fonte": "Atividade-Pratica.pdf, pagina 2",
+  "comparacao_ignorando_whitespace": true,
+  "sha256_utf8_lf": "c06b768524805a0c5e6c6f89082da269aeca966f6e4eeb9b2abeebb484d5069d",
+  "nota": "Texto conferido contra extracao do PDF; normalizacao remove apenas espacos/quebras da diagramacao para comparar. Hash usa conteudo UTF-8 com quebras LF."
+}
