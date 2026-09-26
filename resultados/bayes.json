@@ -1,0 +1,18 @@
+{
+  "parametros": {
+    "prevalencia": 0.0313,
+    "sensibilidade": 0.99,
+    "taxa_falso_positivo": 0.05,
+    "talhoes_por_semana": 2000
+  },
+  "vpp": 0.39015637984437557,
+  "falsos_por_100_alertas": 60.984362015562446,
+  "verdadeiros_semana": 61.974000000000004,
+  "falsos_semana": 96.87,
+  "horas_semana": 19.374000000000002,
+  "vpp_sensibilidade_999": 0.39231177473567724,
+  "vpp_dois_independentes": 0.9268328716862928,
+  "vpp_dois_correlacao_perfeita": 0.39015637984437557,
+  "vpp_fornecedor_99": 0.39015637984437557,
+  "vpp_fornecedor_dois_99_independentes": 0.9268328716862928
+}

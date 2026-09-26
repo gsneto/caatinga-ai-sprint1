@@ -1,0 +1,199 @@
+{
+  "fatos": [
+    "armadilha_negativa",
+    "intervalo_maior_14",
+    "lesoes_visiveis",
+    "sensor_negativo",
+    "umidade_alta"
+  ],
+  "regras_iniciais": [
+    {
+      "nome": "R1",
+      "premissas": [
+        "sensor_positivo"
+      ],
+      "conclusao": "suspeita"
+    },
+    {
+      "nome": "R2",
+      "premissas": [
+        "armadilha_positiva"
+      ],
+      "conclusao": "suspeita"
+    },
+    {
+      "nome": "R3",
+      "premissas": [
+        "suspeita",
+        "umidade_alta"
+      ],
+      "conclusao": "risco_alto"
+    },
+    {
+      "nome": "R4",
+      "premissas": [
+        "risco_alto",
+        "intervalo_maior_14"
+      ],
+      "conclusao": "inspecionar_prioridade_alta"
+    },
+    {
+      "nome": "R5",
+      "premissas": [
+        "suspeita",
+        "intervalo_ate_14"
+      ],
+      "conclusao": "inspecionar_prioridade_normal"
+    },
+    {
+      "nome": "R6",
+      "premissas": [
+        "inspecionar_prioridade_alta"
+      ],
+      "conclusao": "solicitar_agronomo"
+    },
+    {
+      "nome": "R7",
+      "premissas": [
+        "inspecionar_prioridade_normal"
+      ],
+      "conclusao": "solicitar_agronomo"
+    }
+  ],
+  "regras_corrigidas": [
+    {
+      "nome": "R1",
+      "premissas": [
+        "sensor_positivo"
+      ],
+      "conclusao": "suspeita"
+    },
+    {
+      "nome": "R2",
+      "premissas": [
+        "armadilha_positiva"
+      ],
+      "conclusao": "suspeita"
+    },
+    {
+      "nome": "R3",
+      "premissas": [
+        "suspeita",
+        "umidade_alta"
+      ],
+      "conclusao": "risco_alto"
+    },
+    {
+      "nome": "R4",
+      "premissas": [
+        "risco_alto",
+        "intervalo_maior_14"
+      ],
+      "conclusao": "inspecionar_prioridade_alta"
+    },
+    {
+      "nome": "R5",
+      "premissas": [
+        "suspeita",
+        "intervalo_ate_14"
+      ],
+      "conclusao": "inspecionar_prioridade_normal"
+    },
+    {
+      "nome": "R6",
+      "premissas": [
+        "inspecionar_prioridade_alta"
+      ],
+      "conclusao": "solicitar_agronomo"
+    },
+    {
+      "nome": "R7",
+      "premissas": [
+        "inspecionar_prioridade_normal"
+      ],
+      "conclusao": "solicitar_agronomo"
+    },
+    {
+      "nome": "R8",
+      "premissas": [
+        "lesoes_visiveis"
+      ],
+      "conclusao": "suspeita"
+    }
+  ],
+  "antes": {
+    "objetivo": "inspecionar_prioridade_alta",
+    "provado": false,
+    "prova": null,
+    "traco": [
+      "OBJETIVO inspecionar_prioridade_alta",
+      "TENTA R4: risco_alto E intervalo_maior_14 -> inspecionar_prioridade_alta",
+      "  OBJETIVO risco_alto",
+      "  TENTA R3: suspeita E umidade_alta -> risco_alto",
+      "    OBJETIVO suspeita",
+      "    TENTA R1: sensor_positivo -> suspeita",
+      "      OBJETIVO sensor_positivo",
+      "      NAO PROVADO sensor_positivo",
+      "    TENTA R2: armadilha_positiva -> suspeita",
+      "      OBJETIVO armadilha_positiva",
+      "      NAO PROVADO armadilha_positiva",
+      "    NAO PROVADO suspeita",
+      "  NAO PROVADO risco_alto",
+      "NAO PROVADO inspecionar_prioridade_alta"
+    ]
+  },
+  "depois": {
+    "objetivo": "inspecionar_prioridade_alta",
+    "provado": true,
+    "prova": {
+      "conclusao": "inspecionar_prioridade_alta",
+      "regra": "R4",
+      "premissas": [
+        {
+          "conclusao": "risco_alto",
+          "regra": "R3",
+          "premissas": [
+            {
+              "conclusao": "suspeita",
+              "regra": "R8",
+              "premissas": [
+                {
+                  "fato": "lesoes_visiveis"
+                }
+              ]
+            },
+            {
+              "fato": "umidade_alta"
+            }
+          ]
+        },
+        {
+          "fato": "intervalo_maior_14"
+        }
+      ]
+    },
+    "traco": [
+      "OBJETIVO inspecionar_prioridade_alta",
+      "TENTA R4: risco_alto E intervalo_maior_14 -> inspecionar_prioridade_alta",
+      "  OBJETIVO risco_alto",
+      "  TENTA R3: suspeita E umidade_alta -> risco_alto",
+      "    OBJETIVO suspeita",
+      "    TENTA R1: sensor_positivo -> suspeita",
+      "      OBJETIVO sensor_positivo",
+      "      NAO PROVADO sensor_positivo",
+      "    TENTA R2: armadilha_positiva -> suspeita",
+      "      OBJETIVO armadilha_positiva",
+      "      NAO PROVADO armadilha_positiva",
+      "    TENTA R8: lesoes_visiveis -> suspeita",
+      "      OBJETIVO lesoes_visiveis",
+      "      FATO lesoes_visiveis",
+      "    CONCLUI suspeita por R8",
+      "    OBJETIVO umidade_alta",
+      "    FATO umidade_alta",
+      "  CONCLUI risco_alto por R3",
+      "  OBJETIVO intervalo_maior_14",
+      "  FATO intervalo_maior_14",
+      "CONCLUI inspecionar_prioridade_alta por R4"
+    ]
+  }
+}

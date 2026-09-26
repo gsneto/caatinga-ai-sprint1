@@ -1,0 +1,14 @@
+{
+  "subida_encosta": {
+    "media": 889.1,
+    "desvio_amostral": 85.96364508245371,
+    "melhor": 1036.5,
+    "viaveis": 30
+  },
+  "tempera_simulada": {
+    "media": 1315.9,
+    "desvio_amostral": 3.422541906748298,
+    "melhor": 1317.5,
+    "viaveis": 30
+  }
+}

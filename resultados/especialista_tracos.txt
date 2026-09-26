@@ -1,0 +1,38 @@
+ANTES
+OBJETIVO inspecionar_prioridade_alta
+TENTA R4: risco_alto E intervalo_maior_14 -> inspecionar_prioridade_alta
+  OBJETIVO risco_alto
+  TENTA R3: suspeita E umidade_alta -> risco_alto
+    OBJETIVO suspeita
+    TENTA R1: sensor_positivo -> suspeita
+      OBJETIVO sensor_positivo
+      NAO PROVADO sensor_positivo
+    TENTA R2: armadilha_positiva -> suspeita
+      OBJETIVO armadilha_positiva
+      NAO PROVADO armadilha_positiva
+    NAO PROVADO suspeita
+  NAO PROVADO risco_alto
+NAO PROVADO inspecionar_prioridade_alta
+
+DEPOIS
+OBJETIVO inspecionar_prioridade_alta
+TENTA R4: risco_alto E intervalo_maior_14 -> inspecionar_prioridade_alta
+  OBJETIVO risco_alto
+  TENTA R3: suspeita E umidade_alta -> risco_alto
+    OBJETIVO suspeita
+    TENTA R1: sensor_positivo -> suspeita
+      OBJETIVO sensor_positivo
+      NAO PROVADO sensor_positivo
+    TENTA R2: armadilha_positiva -> suspeita
+      OBJETIVO armadilha_positiva
+      NAO PROVADO armadilha_positiva
+    TENTA R8: lesoes_visiveis -> suspeita
+      OBJETIVO lesoes_visiveis
+      FATO lesoes_visiveis
+    CONCLUI suspeita por R8
+    OBJETIVO umidade_alta
+    FATO umidade_alta
+  CONCLUI risco_alto por R3
+  OBJETIVO intervalo_maior_14
+  FATO intervalo_maior_14
+CONCLUI inspecionar_prioridade_alta por R4
