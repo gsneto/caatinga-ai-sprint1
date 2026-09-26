@@ -116,5 +116,5 @@ Também aceita `241.14.036`. Sem `--saida`, a execução substitui os arquivos g
 - Busca local usa benefícios e conversão tempo/custo sintéticos. A subida de encosta terminou por teto de avaliações, não por máximo local confirmado. Os algoritmos locais e o roteiro por vizinho mais próximo não garantem ótimo global.
 - A base especialista é pequena e ilustrativa; sensor, robô e infestação real não foram implementados. Dois testes independentes são apenas um cenário de cálculo.
 - Tempos variam; contadores e custo devem reproduzir as convenções declaradas. Limite de recursão pode mudar entre versões/ambientes.
-- O histórico tem 10 commits.
+- O histórico tem 9 commits.
 - O projeto foi clonado e executado em outro computador pelo autor, além da verificação local em ambiente virtual novo.
